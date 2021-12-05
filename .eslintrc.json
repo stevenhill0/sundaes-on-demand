@@ -1,0 +1,66 @@
+{
+  "extends": [
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "react-app",
+    "react-app/jest",
+    "plugin:jsx-a11y/recommended",
+    "plugin:cypress/recommended",
+    "plugin:chai-friendly/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src"]
+      }
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "testing-library",
+    "jest-dom",
+    "jsx-a11y",
+    "cypress",
+    "chai-friendly",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true,
+    "cypress/globals": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debug": "warn",
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error",
+    "react/prop-types": ["off"],
+    "max-lines-per-function": ["warn", 50],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/extensions": ["error", "never"],
+    "import/no-unresolved": 2,
+    "sort-imports": "off",
+    "import/order": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-curly-newline": "off",
+    "quotes": ["error", "single"]
+  }
+}
