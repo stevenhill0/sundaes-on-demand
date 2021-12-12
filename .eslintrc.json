@@ -58,7 +58,10 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "endOfLine": "auto" }
+    ],
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-curly-newline": "off",
     "quotes": ["error", "single"]
