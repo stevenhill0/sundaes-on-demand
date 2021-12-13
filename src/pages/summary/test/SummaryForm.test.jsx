@@ -49,7 +49,7 @@ describe('SummaryForm test', () => {
 
     userEvent.unhover(termsAndConditions);
     await waitForElementToBeRemoved(() => {
-      screen.queryByText(/no ice cream will actually be delivered/i);
+      return screen.queryByText(/no ice cream will actually be delivered/i);
     });
   });
 });
