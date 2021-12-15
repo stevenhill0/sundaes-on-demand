@@ -1,17 +1,18 @@
 import Col from 'react-bootstrap/Col';
+import React from 'react';
 
-const ScoopOption = ({ name, imagePath }) => {
+const ToppingsOption = ({ name, imagePath }) => {
   return (
     <Col xs={12} sm={6} md={4} lg={3} style={{ textalign: 'center' }}>
       <div>
         <img
           style={{ width: '75%' }}
           src={`http://localhost:3030/${imagePath}`}
-          alt={`${name} scoop`}
+          alt={`${name} topping`}
         ></img>
       </div>
     </Col>
   );
 };
 
-export default ScoopOption;
+export default ToppingsOption;
