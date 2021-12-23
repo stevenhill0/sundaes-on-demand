@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import ScoopOption from './ScoopOption';
 import ToppingsOption from './ToppingsOption';
+import AlertBanner from '../common/AlertBanner';
 
 const Options = ({ optionType }) => {
   const [items, setItems] = useState([]);
-  console.log(items);
+  const [error, setError] = useState(false);
+
   //option type is scoop or toppings. NOTE: if for real app use Enums (fixed constants)
   useEffect(() => {
     axios
@@ -15,9 +17,13 @@ const Options = ({ optionType }) => {
         return setItems(response.data);
       })
       .catch((error) => {
-        //TODO: Add error response
+        return setError(true);
       });
-  }, [optionType, setItems]);
+  }, [optionType]);
+
+  if (error) {
+    return <AlertBanner />;
+  }
 
   const ItemComponent = optionType === 'scoops' ? ScoopOption : ToppingsOption;
 
