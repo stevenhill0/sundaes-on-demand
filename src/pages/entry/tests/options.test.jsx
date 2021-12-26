@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils/testing-library-utils';
 import Options from '../Options';
 
 describe('Scoop Option Tests', () => {
@@ -15,13 +15,16 @@ describe('Scoop Option Tests', () => {
   });
 
   test('Displays image for each topping option from the server', async () => {
+    // Mock Service Worker will return three toppings from server
     render(<Options optionType="toppings" />);
 
+    // find images, expect 3 based on what msw returns
     const toppingImages = await screen.findAllByRole('img', {
       name: /topping$/i,
     });
     expect(toppingImages).toHaveLength(3);
 
+    // check the actual alt text for the images
     const altText = toppingImages.map((element) => {
       return element.alt;
     });
